@@ -1,0 +1,35 @@
+# Ignore bundler config.
+/gp-api/.bundle
+
+# Ignore all logfiles and tempfiles.
+/gp-api/log/*
+/gp-api/tmp/*
+/gp-api!/log/.keep
+/gpapi/!/tmp/.keep
+
+# Ignore pidfiles, but keep the directory.
+/gp-api/tmp/pids/*
+/gp-api/!/tmp/pids/
+/gp-api/!/tmp/pids/.keep
+
+# Ignore uploaded files in development.
+/gp-api/storage/*
+/gp-api!/storage/.keep
+/gp-api/tmp/storage/*
+/gp-api/!/tmp/storage/
+/gp-api/!/tmp/storage/.keep
+
+# Ignore master key for decrypting credentials and more.
+/gp-api/config/master.key
+
+# Docker volumes
+.docker/volumes
+
+# Environment variables
+.env
+
+# Misc
+.DS_Store
+.idea
+
+
