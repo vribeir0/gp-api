@@ -4,17 +4,17 @@
 #
 # Table name: users
 #
-#  id         :bigint           not null, primary key
-#  email      :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id              :bigint           not null, primary key
+#  confirmed_at    :datetime
+#  email           :string           not null
+#  name            :string           not null
+#  password_digest :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
 #
 # Indexes
 #
 #  index_users_on_email  (email) UNIQUE
-#
-# Schema Information
-#
 #
 class User < ApplicationRecord
   CONFIRMATION_TOKEN_EXPIRATION = 10.minutes
@@ -23,6 +23,7 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
+  validates :name, presence: true
   validates :email, format: {with: URI::MailTo::EMAIL_REGEXP}, presence: true, uniqueness: true
 
   def confirm!
