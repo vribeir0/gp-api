@@ -31,5 +31,6 @@
 # Misc
 .DS_Store
 .idea
+.vscode
 
 
