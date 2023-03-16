@@ -4,7 +4,7 @@ module Api
     include Response
 
     def create
-      user = Users::Create.call(random_params)
+      user = Users::Create.call(create_params)
 
       render json: user, serializer: UsersSerializer
     end
@@ -13,14 +13,6 @@ module Api
 
     def create_params 
       params.permit('name', 'email', 'password')
-    end
-
-    def random_params 
-      {
-        name: params[:name],
-        email: params[:email],
-        password: params[:password]
-      }
     end
   end
 end
