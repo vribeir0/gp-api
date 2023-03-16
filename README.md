@@ -10,6 +10,6 @@
     ```
   * Create databases by running:
     ```
-      docker-compose exec api rake db:create
+    docker-compose exec api rails db:create
     ```
 
