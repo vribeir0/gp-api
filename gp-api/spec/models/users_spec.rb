@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
 require 'rails_helper'
 
 describe User, type: :model do
@@ -25,6 +24,5 @@ describe User, type: :model do
       user.password = nil
       expect(user).to_not be_valid        
     end
-    
   end
 end
