@@ -6,7 +6,7 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 
 # Install additional packages.
 RUN apt update -qq
-RUN apt install -y build-essential bash bash-completion postgresql-client nodejs yarn
+RUN apt install -y build-essential bash bash-completion postgresql-client nodejs yarn dos2unix
 
 # Prepare working directory.
 WORKDIR /gp-api
@@ -17,6 +17,7 @@ RUN bundle install
 # Configure endpoint.
 COPY ./.docker/gp-api/entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
+RUN dos2unix /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
