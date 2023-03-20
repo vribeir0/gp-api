@@ -17,7 +17,6 @@ RUN bundle install
 # Configure endpoint.
 COPY ./.docker/gp-api/entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
-# RUN dos2unix /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
