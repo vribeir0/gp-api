@@ -2,5 +2,9 @@ class UsersSerializer < ActiveModel::Serializer
   attributes :id, 
     :name,
     :email,
-    :confirmed_at
+    :confirmed
+
+  def confirmed 
+    object.confirmed?
+  end
 end
