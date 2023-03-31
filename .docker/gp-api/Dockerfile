@@ -10,8 +10,8 @@ RUN apt install -y build-essential bash bash-completion postgresql-client nodejs
 
 # Prepare working directory.
 WORKDIR /gp-api
-COPY ./gp-api /gp-api
-RUN gem install bundler
+COPY ./gp-api /gp-api 
+RUN gem install bundler -v 2.4.7
 RUN bundle install
 
 # Configure endpoint.
