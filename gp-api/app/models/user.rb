@@ -26,6 +26,8 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, format: {with: URI::MailTo::EMAIL_REGEXP}, presence: true, uniqueness: true
 
+  has_many :folders, dependent: :destroy
+
   def confirm!
     update_column(confirmed_at: Time.current)
   end
