@@ -1,4 +1,4 @@
-module Users  
+module Users
   class Create < BaseService
     def initialize(params)
       @params = params
@@ -12,7 +12,7 @@ module Users
 
     attr_accessor :params
 
-    def data 
+    def data
       {
         name: params[:name],
         email: params[:email],

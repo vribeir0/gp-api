@@ -14,8 +14,8 @@
 #  index_folders_on_user_id  (user_id)
 #
 class Folder < ActiveRecord::Base
-    belongs_to :user
-    has_many :tasks, dependent: :destroy
+  belongs_to :user
+  has_many :tasks, dependent: :destroy
 
-    validates :name, presence: true
+  validates :name, presence: true
 end

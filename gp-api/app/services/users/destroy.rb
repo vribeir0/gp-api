@@ -12,4 +12,4 @@ module Users
 
     attr_accessor :user
   end
-end 
+end

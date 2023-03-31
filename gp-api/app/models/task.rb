@@ -18,7 +18,7 @@ class Task < ActiveRecord::Base
   extend Enumerize
   belongs_to :folder
 
-  validates :text,  presence: true
+  validates :text, presence: true
 
-  enumerize :status, in: [:active, :inactive], default: :active, predicates: true
+  enumerize :status, in: %i[active inactive], default: :active, predicates: true
 end

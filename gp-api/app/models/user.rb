@@ -24,7 +24,7 @@ class User < ApplicationRecord
   before_save :downcase_email
 
   validates :name, presence: true
-  validates :email, format: {with: URI::MailTo::EMAIL_REGEXP}, presence: true, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, presence: true, uniqueness: true
 
   has_many :folders, dependent: :destroy
 
